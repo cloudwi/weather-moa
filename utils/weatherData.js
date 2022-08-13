@@ -7,7 +7,7 @@ module.exports = weatherData = (app, data) => {
   axios(
     'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' +
       'serviceKey=' +
-      apiKeyData.ServiceKey +
+      apiKeyData.krServiceKey +
       '&pageNo=1&numOfRows=60&dataType=JSON&base_date=' +
       moment().format('YYYYMMDD') +
       '&base_time=' +
@@ -16,6 +16,24 @@ module.exports = weatherData = (app, data) => {
       apiKeyData[data].nx +
       '&ny=' +
       apiKeyData[data].ny
+  )
+    .then((res) => {
+      const arr = res.data.response.body.items.item.filter(
+        (element) =>
+          element.category === 'SKY' ||
+          element.category === 'T1H' ||
+          element.category === 'PTY'
+      )
+      app.get('/weather', (req, res) => {
+        res.render('test.ejs', { arr: arr })
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+
+  axios(
+    'api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid='{API key}
   )
     .then((res) => {
       const arr = res.data.response.body.items.item.filter(
