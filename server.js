@@ -18,7 +18,6 @@ MongoClient.connect(
     }
 
     db = client.db('weather')
-    // db.collection('data').insertOne({ test: 'test' })
 
     app.listen(8080, () => {
       console.log('Server Start')
@@ -26,20 +25,22 @@ MongoClient.connect(
   }
 )
 
+weatherData(app, 'Seoul')
+
 app.get('/pet', (req, res) => {
   res.send('안녕하세요')
-  weatherData('Busan')
+  console.log()
 })
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
 
-app.get('/weather', (req, res) => {
-  db.collection('data')
-    .find()
-    .toArray((error, result) => {
-      console.log(result)
-      res.render('test.ejs', { datas: result })
-    })
-})
+// app.get('/weather', (req, res) => {
+//   db.collection('data')
+//     .find()
+//     .toArray((error, result) => {
+//       console.log(result)
+//       res.render('test.ejs', { datas: arr })
+//     })
+// })
