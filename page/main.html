@@ -7,7 +7,10 @@
     <title>main</title>
     <style>
         .container {
-            background-color: red;
+            background-image: url('./assat/background.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             width:100vw;
             height: 100vh;
             padding: 1%;
@@ -17,49 +20,66 @@
             position: relative;
         }
         .logo {
-            background-color: aqua;
-            width: 200px;
-            height: 200px;
+            background-image: url("./assat/logo.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 250px;
+            height: 250px;
             margin: 5%;
-            box-shadow: 3px 3px 0px 0px
 
         }
         .icon {
-            background-color: blanchedalmond;
             justify-content: space-between;
             display: flex;
         }
-        .region {
+        .regionBusan {
             width: 200px;
             height: 200px;
             text-align: center;
-            background-color:rgb(157, 211, 63);
             margin: 3%;
-            box-shadow: 3px 3px 0px 0px;
-            transition: background-color .5s;
-            border: 3px solid #fff;
-            border-radius: 5px;
+            border-radius: 50px;
             display: block;
+            background-image: url("./assat/Busan.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
         }
-        .region:hover {
-            color: #2ecc71;
-            box-shadow: 0 0 5px #c4c38e,
-                0 0 25px #6bad35,
-                0 0 50px #8abb40,
-                0 0 200px #8bba35;
-            
+        .regionBusan:hover {
+            box-shadow: 1px 1px 20px rgb(0, 0, 0);
         }
-        
+        .regionBusanText {
+            width: 200px;
+            text-align: center;
+        }
+
+        .regionSeoul {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 3%;
+            border-radius: 50px;
+            display: block;
+            background-image: url("./assat/Seoul.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .regionSeoul:hover {
+            box-shadow: 1px 1px 20px rgb(0, 0, 0);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">로고 들어올 공간</div>
-        <div class="icon"> 
-            <div class="region">부산</div>
-            <div class="region">서울</div>
+        <div class="logo"></div>
+        <div class="icon">
+                <a class="regionBusan" href="https://weather-moa.herokuapp.com/Busan"></a>
+                <a class="regionSeoul" href="https://weather-moa.herokuapp.com/Seoul"></a>
         </div>
-        
     </div>
 </body>
 </html>
