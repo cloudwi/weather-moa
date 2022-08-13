@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>details</title>
     <style>
+    .clock_design{ color: #FFFFFF; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); font-family: 'Inter'; font-style: normal; font-weight: 400; font-size: 30px; }
+    .clock_design_2{ color: #FFFFFF; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); font-family: 'Inter'; font-style: normal; font-weight: 400; font-size: 15px; }
         .container {
             background-image: url('./assat/background.png');
             background-position: center;
@@ -34,7 +36,7 @@
             flex-direction: column;
             position: relative;
         }
- 
+
         .minContainer {
             padding: 1%;
             display: flex;
@@ -51,12 +53,11 @@
             align-items: center;
             flex-direction: column;
             position: relative;
-            }           
+            }
         }
         .title {
-            margin-bottom: 50px;
+            margin-bottom: 10px;
             color: white;
-            
             text-shadow: 0 0 10px  gray;
         }
         .board1 {
@@ -121,9 +122,9 @@ background-size: cover;
         .icon2 {
             width: 40px;
             height: 40px;
-background-image: url('./assat/구름조금\ 해\ 반짝.png');         
+background-image: url('./assat/구름조금\ 해\ 반짝.png');
 background-position: center;
-background-size: cover;   
+background-size: cover;
         }
         .logoBox{
             width: 100px;
@@ -140,7 +141,7 @@ background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
-            
+
         }
         hr{
             width: 70%;
@@ -150,7 +151,11 @@ background-size: cover;
 </head>
 <body>
         <div class="container">
-            <h1 class="title">부산광역시</h1>
+            <h1 class="title"><%=city%></h1>
+            <div style="text-align: center; padding-bottom:20px;">
+                <span id="clock" class="clock_design">clock</span>
+                <span id="apm" class="clock_design_2">ampm</span>
+            </div>
             <div class="minContainer">
                 <div class="board1">
                     <div class="m1box">
@@ -159,27 +164,26 @@ background-size: cover;
                     </div>
                     <hr>
                     <div class="m1fullbox">
-                        
                         <div class="m1box">
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=koArr[1].fcstTime%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=koArr[13].fcstValue%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=koArr[2].fcstTime%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=koArr[14].fcstValue%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=koArr[3].fcstTime%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=koArr[15].fcstValue%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=koArr[4].fcstTime%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=koArr[16].fcstValue%>°C</h3>
                             </div>
                         </div>
                     </div>
@@ -192,27 +196,26 @@ background-size: cover;
                     </div>
                     <hr>
                     <div class="m1fullbox">
-                        
                         <div class="m1box">
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=usArr[2].dt_txt%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=usArr[2].main.temp%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=usArr[3].dt_txt%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=usArr[3].main.temp%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=usArr[4].dt_txt%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=usArr[4].main.temp%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;">01:00</h2>
+                                <h2 style="margin: 5px;"><%=usArr[5].dt_txt%></h2>
                                 <div class="icon2"></div>
-                                <h4>온도</h4>
+                                <h3><%=usArr[5].main.temp%>°C</h3>
                             </div>
                         </div>
                     </div>
@@ -221,4 +224,5 @@ background-size: cover;
             </div>
         </div>
 </body>
+<script src="main.js"></script>
 </html>
