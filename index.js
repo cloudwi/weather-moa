@@ -15,7 +15,7 @@ app.set('view enfine', 'ejs')
 app.use(express.static('views'))
 app.use(express.static('page'))
 app.get('/', (req, res) => {
-  res.sendFile('./page/index.html')
+  res.sendFile(__dirname + '/page/main.html')
 })
 
 app.get('/index', (req, res) => {
@@ -76,7 +76,7 @@ app.get('/Busan', async (req, res) => {
       console.log(error)
     })
 
-  res.render('mainpc.ejs', { koArr: koArr, usArr: usArr })
+  res.render('detail.ejs', { koArr: koArr, usArr: usArr })
 })
 
 app.get('/Seoul', async (req, res) => {
@@ -133,7 +133,7 @@ app.get('/Seoul', async (req, res) => {
       console.log(error)
     })
 
-  res.render('mainpc.ejs', { koArr: koArr, usArr: usArr })
+  res.render('detail.ejs', { koArr: koArr, usArr: usArr })
 })
 
 app.listen(port, () => {
