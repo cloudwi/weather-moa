@@ -1,42 +1,31 @@
-const express = require('express')
-const { Db } = require('mongodb')
-const app = express()
-app.set('view enfine', 'ejs')
+const express = require('express');
+const app = express();
+const axios = require('axios');
+const port = 3000;
 
-const MongoClient = require('mongodb').MongoClient
+// #define VARID = "c7c793d38c781c47682fd00e09f1a7da";
+let lat = 35.1028;
+let lon = 129.0403;
+let apiKey = "c7c793d38c781c47682fd00e09f1a7da";
+// let url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+let url = "https://api.openweathermap.org/data/2.5/weather?lat=35.1333&lon=129.05&appid=c7c793d38c781c47682fd00e09f1a7da&units=metric";
 
-//데이터 베이스 정의
-var db
+app.listen(port, function() {
+  console.log('Server Start. on port' + port);
+});
 
-MongoClient.connect(
-  'mongodb+srv://cloudwi:MN77868!!!@cluster0.gc6u716.mongodb.net/?retryWrites=true&w=majority',
-  (error, client) => {
-    if (error) {
-      return console.log('오류발생')
-    }
 
-    db = client.db('weather')
-    // db.collection('data').insertOne({ test: 'test' })
+app.get('/', (req, res)=>{
+  res.send(getData(url));
+})
 
-    app.listen(8080, () => {
-      console.log('Server Start')
-    })
+async function getData(url) {
+  try {
+    //응답 성공
+    const response = await axios.get(url);
+    console.log(response.data);
+  } catch (error) {
+    //응답 실패
+    console.error(error);
   }
-)
-
-app.get('/pet', (req, res) => {
-  res.send('안녕하세요')
-})
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html')
-})
-
-app.get('/weather', (req, res) => {
-  db.collection('data')
-    .find()
-    .toArray((error, result) => {
-      console.log(result)
-      res.render('test.ejs', { datas: result })
-    })
-})
+}
