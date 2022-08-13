@@ -1,6 +1,8 @@
 const express = require('express')
-const { Db } = require('mongodb')
 const app = express()
+const weatherData = require('./utils/weatherData')
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+
 app.set('view enfine', 'ejs')
 
 const MongoClient = require('mongodb').MongoClient
@@ -26,6 +28,7 @@ MongoClient.connect(
 
 app.get('/pet', (req, res) => {
   res.send('안녕하세요')
+  weatherData('Busan')
 })
 
 app.get('/', (req, res) => {
