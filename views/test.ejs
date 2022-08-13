@@ -7,8 +7,55 @@
     <title>testPage</title>
 </head>
 <body>
+    <h1>한국 기상청</h1>
     <h1>testPage</h1>
-    <h4>할일 제목2 : <%=koArr[0]%></h4>
-    <p>할일 마감 날짜 : <%=usArr[0]%></p>
+    <h3>가장 최근 기온 현재 기온 : <%=koArr[12].fcstValue%></h4>
+    <span>-----------------------</span>
+    <h4>시간 : <%=koArr[1].fcstTime%></h4>
+    <h4>기온 : <%=koArr[13].fcstValue%></h5>
+    <h4>강수 : <%=koArr[1].fcstValue%></h1>
+    <span>하늘 여부(1:맑음, 3:구름많음, 4:흐림) : <%=koArr[7].fcstValue%></span>
+    <h5>----------------------------------------</h5>
+
+    <h4>시간 : <%=koArr[2].fcstTime%></h4>
+    <h4>기온 : <%=koArr[14].fcstValue%></h5>
+    <h4>강수 : <%=koArr[2].fcstValue%></h1>
+    <span>하늘 여부(1:맑음, 3:구름많음, 4:흐림) : <%=koArr[8].fcstValue%></span>
+    <h5>----------------------------------------</h5>
+
+    <h4>시간 : <%=koArr[3].fcstTime%></h4>
+    <h4>기온 : <%=koArr[15].fcstValue%></h5>
+    <h4>강수 : <%=koArr[3].fcstValue%></h1>
+    <span>하늘 여부(1:맑음, 3:구름많음, 4:흐림) : <%=koArr[9].fcstValue%></span>
+    <h5>----------------------------------------</h5>
+
+    <h4>시간 : <%=koArr[4].fcstTime%></h4>
+    <h4>기온 : <%=koArr[16].fcstValue%></h5>
+    <h4>강수 : <%=koArr[4].fcstValue%></h1>
+    <span>하늘 여부(1:맑음, 3:구름많음, 4:흐림) : <%=koArr[10].fcstValue%></span>
+    <h5>----------------------------------------</h5>
+
+    <h1>openweather</h1>
+    <h4>시간 : <%=usArr[2].dt_txt%></h4>
+    <h4>기온 : <%=usArr[2].main.temp%></h4>
+    <h4>강수 : <%=usArr[2].weather[0].main%></h4>
+    <h4>지난 3시간 강수량 : <%=usArr[2].weather[0].main%></h4>
+    <h5>----------------------------------------</h5>
+
+    <h4>시간 : <%=usArr[3].dt_txt%></h4>
+    <h4>기온 : <%=usArr[3].main.temp%></h4>
+    <h4>강수 : <%=usArr[3].weather[0].main%></h4>
+    <h5>----------------------------------------</h5>
+
+    <h4>시간 : <%=usArr[4].dt_txt%></h4>
+    <h4>기온 : <%=usArr[4].main.temp%></h4>
+    <h4>강수 : <%=usArr[4].weather[0].main%></h4>
+    <h5>----------------------------------------</h5>
+
+    <h4>시간 : <%=usArr[5].dt_txt%></h4>
+    <h4>기온 : <%=usArr[5].main.temp%></h4>
+    <h4>강수 : <%=usArr[5].weather[0].main%></h4>
+    <h5>----------------------------------------</h5>
+
 </body>
 </html>
