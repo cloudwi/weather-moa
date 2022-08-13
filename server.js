@@ -3,7 +3,7 @@ const app = express()
 const weatherData = require('./utils/weatherData')
 const axios = require('axios')
 const moment = require('moment')
-const apiKeyData = require('./key/apiKeyData')
+const apiKeyData = require('./keys/apiKeyData')
 const e = require('express')
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
@@ -35,41 +35,20 @@ app.set('view enfine', 'ejs')
 
 // weatherData(app, 'Seoul')
 
-<<<<<<< HEAD
-// app.get('/pet', (req, res) => {
-//   res.send('안녕하세요')
-//   console.log()
-// })
+// MongoClient.connect(
+//   'mongodb+srv://cloudwi:MN77868!!!@cluster0.gc6u716.mongodb.net/?retryWrites=true&w=majority',
+//   (error, client) => {
+//     if (error) {
+//       return console.log('오류발생')
+//     }
 //
-// app.get('/', (req, res) => {
-//   res.send("testt");
-//   // res.sendFile(__dirname + '/views/index.html')
-// })
-
-app.get('/', (req, res) => {
-
-    res.render('test.ejs', { test: "0130"  })
-
-})
-
-app.listen(3000, () => {
-      console.log('Server Start')
-    })
-=======
-MongoClient.connect(
-  'mongodb+srv://cloudwi:MN77868!!!@cluster0.gc6u716.mongodb.net/?retryWrites=true&w=majority',
-  (error, client) => {
-    if (error) {
-      return console.log('오류발생')
-    }
-
-    db = client.db('weather')
-
-    app.listen(8080, () => {
-      console.log('Server Start')
-    })
-  }
-)
+//     db = client.db('weather')
+//
+//     app.listen(8080, () => {
+//       console.log('Server Start')
+//     })
+//   }
+// )
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/page/index.html')
@@ -131,4 +110,7 @@ app.get('/Busan', async (req, res) => {
 
   res.render('test.ejs', { koArr: koArr, usArr: usArr })
 })
->>>>>>> 5281e563515595d6e1ccc6d548cdb5b985756a2f
+
+app.listen(process.env.PORT || 3000, () => {
+      console.log('Server Start')
+    })
