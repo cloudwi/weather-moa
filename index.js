@@ -79,6 +79,63 @@ app.get('/Busan', async (req, res) => {
   res.render('mainpc.ejs', { koArr: koArr, usArr: usArr })
 })
 
+app.get('/Seoul', async (req, res) => {
+  await axios(
+    'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' +
+      'serviceKey=' +
+      apiKeyData.krServiceKey +
+      '&pageNo=1&numOfRows=60&dataType=JSON&base_date=' +
+      moment().subtract(1, 'hour').format('YYYYMMDD') +
+      '&base_time=' +
+      moment().subtract(1, 'hour').format('HH00') +
+      '&nx=' +
+      apiKeyData.Seoul.nx +
+      '&ny=' +
+      apiKeyData.Seoul.ny
+  )
+    .then((response) => {
+      koArr = response.data.response.body.items.item.filter(
+        (element) =>
+          element.category === 'SKY' ||
+          element.category === 'T1H' ||
+          element.category === 'RN1'
+      )
+
+      koArr.forEach((element) => {
+        element.fcstTime = [
+          element.fcstTime.slice(0, 2),
+          ':',
+          element.fcstTime.slice(2),
+        ].join('')
+      })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+  await axios(
+    'https://api.openweathermap.org/data/2.5/forecast?lat=' +
+      apiKeyData.Seoul.lat +
+      '&lon=' +
+      apiKeyData.Seoul.lon +
+      '&appid=' +
+      apiKeyData.usServiceKey +
+      '&units=metric&cnt=6'
+  )
+    .then((response) => {
+      usArr = response.data.list
+      usArr.forEach((element) => {
+        element.dt_txt = element.dt_txt.slice(11, 16)
+        element.main.temp = Math.floor(element.main.temp)
+      })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+  res.render('mainpc.ejs', { koArr: koArr, usArr: usArr })
+})
+
 app.listen(port, () => {
   console.log('listening on 8080')
 })
