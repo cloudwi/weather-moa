@@ -6,6 +6,7 @@ const moment = require('moment')
 const apiKeyData = require('./key/apiKeyData')
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+
 let koArr
 let usArr
 
@@ -70,4 +71,8 @@ app.get('/Busan', async (req, res) => {
     })
 
   res.render('test.ejs', { koArr: koArr, usArr: usArr })
+})
+
+app.listen(port, () => {
+  console.log('listening on 8080')
 })
