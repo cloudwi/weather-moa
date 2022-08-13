@@ -12,7 +12,7 @@ let usArr
 
 app.set('view enfine', 'ejs')
 
-app.use('/', express.static('main.ejs'))
+app.use(express.static('views'))
 
 app.get('/Busan', async (req, res) => {
   await axios(
@@ -68,7 +68,7 @@ app.get('/Busan', async (req, res) => {
       console.log(error)
     })
 
-  res.render('test.ejs', { koArr: koArr, usArr: usArr })
+  res.render('mainpc.ejs', { koArr: koArr, usArr: usArr })
 })
 
 app.listen(port, () => {
