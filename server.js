@@ -33,6 +33,10 @@ MongoClient.connect(
   }
 )
 
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/page/index.html')
+})
+
 app.get('/Busan', async (req, res) => {
   await axios(
     'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' +
