@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/index', (req, res) => {
-  res.sendFile(__dirname + '/page/main.html')
+  res.sendFile(__dirname + '/page/detail.html')
 })
 
 app.get('/Busan', async (req, res) => {

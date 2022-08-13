@@ -34,6 +34,7 @@
             flex-direction: column;
             position: relative;
         }
+ 
         .minContainer {
        
             padding: 1%;
@@ -43,6 +44,16 @@
             flex-direction: row;
             position: relative;
         }
+        @media screen and (max-width: 600px) {
+            .minContainer {
+                padding: 1%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            }           
+        }
         .title {
             margin-bottom: 50px;
             color: white;
@@ -50,6 +61,8 @@
             text-shadow: 0 0 10px  gray;
         }
         .board1 {
+            min-width: 300px;
+            min-height: 300px;
             width: 35vw;
             height: 35vw;
             margin: 1%;
@@ -64,6 +77,8 @@
 
         }
         .board2 {
+            min-height: 300px;
+            min-width: 300px;
             width: 35vw;
             height: 35vw;
             margin: 1%;
