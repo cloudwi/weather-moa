@@ -18,11 +18,12 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/page/main.html')
 })
 
-app.get('/index', (req, res) => {
-  res.sendFile(__dirname + '/page/detail.html')
-})
+// app.get('/index', (req, res) => {
+//   res.sendFile(__dirname + '/detail.ejs')
+// })
 
 app.get('/Busan', async (req, res) => {
+  let city = "부산광역시"
   await axios(
     'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' +
       'serviceKey=' +
@@ -76,10 +77,11 @@ app.get('/Busan', async (req, res) => {
       console.log(error)
     })
 
-  res.render('detail.ejs', { koArr: koArr, usArr: usArr })
+  res.render('detail.ejs', { koArr: koArr, usArr: usArr, city: city })
 })
 
 app.get('/Seoul', async (req, res) => {
+  let city = "서울특별시"
   await axios(
     'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' +
       'serviceKey=' +
@@ -133,7 +135,7 @@ app.get('/Seoul', async (req, res) => {
       console.log(error)
     })
 
-  res.render('detail.ejs', { koArr: koArr, usArr: usArr })
+  res.render('detail.ejs', { koArr: koArr, usArr: usArr, city: city })
 })
 
 app.listen(port, () => {
