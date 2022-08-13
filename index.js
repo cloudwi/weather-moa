@@ -12,9 +12,7 @@ let usArr
 
 app.set('view enfine', 'ejs')
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/page/index.html')
-})
+app.use('/', express.static('main.ejs'))
 
 app.get('/Busan', async (req, res) => {
   await axios(

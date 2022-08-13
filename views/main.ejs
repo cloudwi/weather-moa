@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        .container {
+            background-image: url('./assat/background.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:100vw;
+            height: 100vh;
+            padding: 1%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .logo {
+            background-image: url("./assat/logo.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 250px;
+            height: 250px;
+            margin: 5%;
+
+        }
+        .icon {
+            justify-content: space-between;
+            display: flex;
+        }
+        .regionBusan {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 3%;
+            border-radius: 50px;
+            display: block;
+            background-image: url("./assat/Busan.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .regionBusan:hover {
+            box-shadow: 1px 1px 20px rgb(0, 0, 0);
+        }
+        .regionBusanText {
+            width: 200px;
+            text-align: center;
+        }
+        
+        .regionSeoul {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 3%;
+            border-radius: 50px;
+            display: block;
+            background-image: url("./assat/Seoul.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .regionSeoul:hover {
+            box-shadow: 1px 1px 20px rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <div class="icon">
+                <a class="regionBusan" href="detail.html"></a>
+                <a class="regionSeoul" href="detail.html"></a>
+        </div>
+    </div>
+</body>
+</html>
