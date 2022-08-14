@@ -9,6 +9,7 @@
     .clock_design{ color: #FFFFFF; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); font-family: 'Inter'; font-style: normal; font-weight: 400; font-size: 30px; }
     .clock_design_2{ color: #FFFFFF; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); font-family: 'Inter'; font-style: normal; font-weight: 400; font-size: 15px; }
 
+    
     .container {
         min-width: 375px;
         background-image: url('./assat/background.png');
@@ -152,51 +153,17 @@
         width: 70%;
 
         }
-        @media screen and (max-width: 371px) {
-        .title {
-            margin-bottom: 30px;
-            color: white;
 
-            text-shadow: 0 0 10px  gray;
-        }
-        .board1 {
-        min-width: 200px;
-        min-height: 200px;
-        width: 35vw;
-        height: 35vw;
-        margin: 1%;
-        background-color: #ffffff;
-        opacity: 0.5;
-        padding: 1%;
-        border-radius: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .board2 {
-        min-height: 200px;
-        min-width: 200px;
-        width: 35vw;
-        height: 35vw;
-        margin: 1%;
-        padding: 1%;
-        background-color: #ffffff;
-        opacity: 0.5;
-        border-radius: 50px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-    }
-    .container {
+
+        @media screen and (max-height: 840px){
+            .container {
         min-width: 375px;
         background-image: url('./assat/background.png');
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         width:100vw;
-        height: 830;
+        height: 830px;
 
         display: flex;
         justify-content: center;
@@ -219,6 +186,56 @@
         flex-direction: column;
         position: relative;
     }
+        }
+        @media screen and (max-width: 380px) {
+        .title {
+            margin-bottom: 30px;
+            color: white;
+
+            text-shadow: 0 0 10px  gray;
+        }
+        .board1 {
+        
+    }
+    .board2 {
+        
+        
+        
+        
+    }
+    .container {
+        min-width: 380px;
+        min-height: 830px;
+        background-image: url('./assat/background.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width:100vw;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+    .container1 {
+        min-width: 380px;
+        min-height: 830px;
+        background-image: url('./assat/background.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width:100vw;
+        height: 100vh;
+        padding: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+    
     }
     </style>
 </head>
