@@ -115,6 +115,8 @@
             box-shadow: 5px 5px 5px 5px rgb(216, 234, 59);
         }
     .m1fullbox{
+        width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -140,16 +142,16 @@
         background-size: cover;
     }
     .logoBox{
-        width: 100px;
-        height: 40px;
+        width: 200px;
+        height: 100px;
         background-image: url("./img/openweather.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
     }
     .logoBox2{
-        width: 100px;
-        height: 40px;
+        width: 200px;
+        height: 100px;
         background-image: url("./assat/k_weather.png");
         background-position: center;
         background-repeat: no-repeat;
@@ -255,22 +257,22 @@
                     <div class="m1fullbox">
                         <div class="m1box">
                             <div class="m2box">
-                                <h2 style="margin: 5px;"><%=koArr[1].fcstTime%></h2>
+                                <h2 style="margin: 5px;"><%=koArr[0].fcstTime%></h2>
                                 <div class="icon2"></div>
                                 <h3><%=koArr[13].fcstValue%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;"><%=koArr[2].fcstTime%></h2>
+                                <h2 style="margin: 5px;"><%=koArr[1].fcstTime%></h2>
                                 <div class="icon2"></div>
                                 <h3><%=koArr[14].fcstValue%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;"><%=koArr[3].fcstTime%></h2>
+                                <h2 style="margin: 5px;"><%=koArr[2].fcstTime%></h2>
                                 <div class="icon2"></div>
                                 <h3><%=koArr[15].fcstValue%>°C</h3>
                             </div>
                             <div class="m2box">
-                                <h2 style="margin: 5px;"><%=koArr[4].fcstTime%></h2>
+                                <h2 style="margin: 5px;"><%=koArr[3].fcstTime%></h2>
                                 <div class="icon2"></div>
                                 <h3><%=koArr[16].fcstValue%>°C</h3>
                             </div>
