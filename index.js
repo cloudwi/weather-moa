@@ -11,7 +11,6 @@ let koArr
 let usArr
 
 app.set('view enfine', 'ejs')
-
 app.use(express.static('views'))
 app.use(express.static('page'))
 app.get('/', (req, res) => {
@@ -23,7 +22,7 @@ app.get('/', (req, res) => {
 // })
 
 app.get('/Busan', async (req, res) => {
-  let city = "부산광역시"
+  let city = '부산광역시'
   await axios(
     'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' +
       'serviceKey=' +
@@ -81,7 +80,7 @@ app.get('/Busan', async (req, res) => {
 })
 
 app.get('/Seoul', async (req, res) => {
-  let city = "서울특별시"
+  let city = '서울특별시'
   await axios(
     'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?' +
       'serviceKey=' +
