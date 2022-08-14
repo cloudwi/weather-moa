@@ -51,8 +51,6 @@ app.get('/Busan', async (req, res) => {
           element.fcstTime.slice(2),
         ].join('')
       })
-
-      console.log(koArr)
     })
     .catch((error) => {
       console.log(error)
